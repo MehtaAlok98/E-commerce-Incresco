@@ -1,0 +1,20 @@
+<svg width="295" height="1708" viewBox="0 0 295 1708" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.8">
+<g opacity="0.4">
+<mask id="path-1-inside-1_1_409" fill="white">
+<path d="M0 0H295V1706C295 1707.1 294.105 1708 293 1708H2C0.895433 1708 0 1707.1 0 1706V0Z"/>
+</mask>
+<path d="M0 0H295H0ZM296 1706C296 1707.66 294.657 1709 293 1709H2C0.343146 1709 -1 1707.66 -1 1706H1C1 1706.55 1.44772 1707 2 1707H293C293.552 1707 294 1706.55 294 1706H296ZM2 1709C0.343146 1709 -1 1707.66 -1 1706V0H1V1706C1 1706.55 1.44772 1707 2 1707V1709ZM296 0V1706C296 1707.66 294.657 1709 293 1709V1707C293.552 1707 294 1706.55 294 1706V0H296Z" fill="#BEBCBD" mask="url(#path-1-inside-1_1_409)"/>
+</g>
+<line opacity="0.4" x1="4.37114e-08" y1="65.5" x2="295" y2="65.5" stroke="#BEBCBD"/>
+<line opacity="0.4" x1="4.37114e-08" y1="526.5" x2="295" y2="526.5" stroke="#BEBCBD"/>
+<line opacity="0.4" x1="4.37114e-08" y1="1145.69" x2="295" y2="1145.69" stroke="#BEBCBD"/>
+<line opacity="0.4" x1="4.37114e-08" y1="1423.5" x2="295" y2="1423.5" stroke="#BEBCBD"/>
+<line opacity="0.4" x1="4.37114e-08" y1="1357.69" x2="295" y2="1357.69" stroke="#BEBCBD"/>
+<line opacity="0.4" x1="4.37114e-08" y1="748.5" x2="295" y2="748.5" stroke="#BEBCBD"/>
+<line opacity="0.4" x1="4.37114e-08" y1="1079.69" x2="295" y2="1079.69" stroke="#BEBCBD"/>
+<line opacity="0.4" x1="4.37114e-08" y1="682.5" x2="295" y2="682.5" stroke="#BEBCBD"/>
+<line opacity="0.4" x1="4.37114e-08" y1="460.5" x2="295" y2="460.5" stroke="#BEBCBD"/>
+</g>
+</svg>
+

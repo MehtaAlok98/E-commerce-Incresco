@@ -25,3 +25,36 @@ body {
     text-wrap: balance;
   }
 }
+
+.react-slider {
+  position: relative;
+}
+
+.react-slider-thumb {
+  position: relative;
+  top: -12px; /* Move the thumb above the track */
+  z-index: 2; /* Ensure thumbs are above the track */
+}
+
+.react-slider-thumb:nth-child(1) {
+  background: #4f46e5; /* Color for the left thumb */
+}
+
+.react-slider-thumb:nth-child(2) {
+  background: #4f46e5; /* Color for the right thumb */
+}
+
+/* Fill the area between thumbs */
+.react-slider-track::before {
+  content: '';
+  /* position: absolute; */
+  background: #4f46e5; /* Fill color */
+  height: 2px; /* Match track height */
+  z-index: 2; /* Ensure it's above the track background */
+  top: 50%; /* Center vertically */
+}
+
+.react-slider-track::before {
+  left: calc(var(--min-value) * 0.1%); /* Calculate left position based on min value */
+  width: calc((var(--max-value) - var(--min-value)) * 0.1%); /* Calculate width based on min and max values */
+}
