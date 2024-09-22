@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Ecommerce App
 
-## Getting Started
+This is a full-featured ecommerce web application built using **Next.js**, **Prisma** with **PostgreSQL**, and **Tailwind CSS** for styling. The app supports features such as product listing, filters, shopping cart, size/color variants, and more. It's deployed on **Vercel** for seamless scaling and performance.
 
-First, run the development server:
+## Tech Stack
+
+- **Next.js** (v14.2.13) - Framework for server-side rendering and React-based application
+- **Prisma** (v5.19.1) - ORM for PostgreSQL integration
+- **PostgreSQL** - Relational database for storing app data
+- **Tailwind CSS** (v3.4.12) - Utility-first CSS framework for styling
+- **Vercel** - Hosting and deployment platform
+
+## Features
+
+- User-friendly product listing page with color and size filters
+- Shopping cart functionality with the ability to select product variants
+- Backend integration with PostgreSQL for product data storage
+- Tailwind CSS for fully responsive and modern UI
+- Environment variable support for secure database credentials
+
+## Setup Instructions
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (v18.x or above)
+- **PostgreSQL** (Database setup)
+- **Git**
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/username/ecommerce-app.git
+cd ecommerce-app
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Setup PostgreSQL Database
+
+Ensure that you have a PostgreSQL database setup and note the connection string. Create a `.env` file in the root directory with the following environment variables:
+
+```bash
+# PostgreSQL connection strings
+POSTGRES_URL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE
+POSTGRES_PRISMA_URL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public
+POSTGRES_URL_NO_SSL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE?sslmode=disable
+POSTGRES_URL_NON_POOLING=postgresql://USER:PASSWORD@HOST:PORT/DATABASE
+```
+
+### 4. Prisma Configuration
+
+Run Prisma commands to generate the client and apply migrations:
+
+#### Migrate the database:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+This command applies the initial migrations to your database.
+
+#### Generate Prisma Client:
+
+```bash
+npx prisma generate
+```
+
+This will generate the Prisma client, allowing you to interact with your PostgreSQL database in your code.
+
+### 5. Seed the Database
+
+You can use Prisma to seed the database with the initial product data. Add your seed logic in the `prisma/seed.js` file and then run:
+
+```bash
+npx prisma db seed
+```
+
+### 6. Start the Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will be available at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 7. Deploy on Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To deploy your project on Vercel:
 
-## Learn More
+1. Push your changes to a Git repository.
+2. Go to [Vercel](https://vercel.com/) and connect your GitHub or GitLab repository.
+3. Add your environment variables (from `.env`) in the Vercel project settings.
+4. Deploy the project.
 
-To learn more about Next.js, take a look at the following resources:
+## Prisma Commands
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Here are some useful Prisma commands for managing your database:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **Migrate the database:**
 
-## Deploy on Vercel
+  ```bash
+  npx prisma migrate dev --name <migration_name>
+  ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Generate Prisma client:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  ```bash
+  npx prisma generate
+  ```
+
+- **Seed the database:**
+
+  ```bash
+  npx prisma db seed
+  ```
+
+- **Open Prisma Studio (for database inspection):**
+
+  ```bash
+  npx prisma studio
+  ```
+
+## Environment Variables
+
+Make sure to set the following environment variables in your `.env` file for local development and in Vercel for production:
+
+```bash
+# PostgreSQL connection details
+POSTGRES_URL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE
+POSTGRES_PRISMA_URL=postgresql://USER:PASSWORD@HOST:PORT/DATABASE?schema=public
+
+# Other environment variables
+NEXT_PUBLIC_API_URL=https://your-api-url.com
+```
+
+## Tailwind CSS
+
+Tailwind CSS is already configured for the project. You can use the utility classes provided by Tailwind for building responsive and modern UIs efficiently. You can find the Tailwind configuration in the `tailwind.config.js` file.
+
+## Project Structure
+
+```
+├── public/               # Public assets like images, icons
+├── prisma/               # Prisma schema and migrations
+├── src/                  # Source code for the app
+│   ├── components/       # React components
+│   ├── pages/            # Next.js pages (API routes and app pages)
+│   ├── lib/              # Prisma client setup
+│   └── styles/           # Global and component styles (Tailwind)
+├── .env                  # Environment variables
+├── tailwind.config.js     # Tailwind CSS configuration
+├── prisma/schema.prisma   # Prisma schema for database models
+└── package.json          # Project configuration and scripts
+```
+
+## License
+
+This project is licensed under the MIT License.
